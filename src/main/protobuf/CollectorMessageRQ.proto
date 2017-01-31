@@ -1,0 +1,22 @@
+syntax="proto3";
+package collector;
+
+option csharp_namespace = "me.bpulse.domain.proto.collector";
+option optimize_for = SPEED;
+
+message Value{
+	 string name = 1;
+	repeated string values = 2;
+}
+
+message Pulse{
+	 string typeId = 1;
+	 string instanceId = 2;
+	 int64 time = 3;
+	repeated Value values = 4;
+}
+
+message PulsesRQ{
+	 string version = 1;
+	repeated Pulse pulse = 2;
+}

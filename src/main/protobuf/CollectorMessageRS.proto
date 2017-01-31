@@ -1,0 +1,17 @@
+syntax="proto3";
+package collector;
+
+option csharp_namespace = "me.bpulse.domain.proto.collector";
+option optimize_for = SPEED;
+
+message PulsesRS{
+
+enum StatusType {
+    OK = 0;
+    ERROR = 1;
+  }
+
+	 int64 rsTime = 1;
+	 StatusType status = 2;
+	 string error = 3;
+}
